@@ -23,6 +23,12 @@ body{
     background: hsl(247, 100%, 56%);
     border: 2px solid black;
     box-sizing: border-box;
+    color: rgb(222, 255, 254);
+    font-size: 26px;
+    font-weight: bolder;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
 }
 .calculation-numbers{
     display: grid;
