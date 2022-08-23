@@ -19,7 +19,7 @@ body{
     gap: 20px;
     background: #2776ff;
 }
-.calculation-tab{
+#calculation-tab{
     background: hsl(247, 100%, 56%);
     border: 2px solid black;
     box-sizing: border-box;

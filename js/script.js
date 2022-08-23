@@ -6,34 +6,46 @@ var calculation_tab = document.getElementById("calculation-tab")
 function Calcul(l, k) {
     d++
     if (l == 1) {
+        s *= 10
         s += k
         calculation_tab.innerHTML = "" + s + ""
-        s *= 10
     }
     if (l == 2) {
         switch (k) {
-            case 11:
+            case "plus":
                 s0 += s
                 calculation_tab.innerHTML = "+"
+                console.log(s0);
                 s = 0
-            case 12:
+                break
+            case "minus":
                 s0 -= s
                 calculation_tab.innerHTML = "-"
+                console.log(s0);
                 s = 0
-            case 15:
+                break
+            case "multiply":
                 s0 *= s
                 calculation_tab.innerHTML = "*"
+                console.log(s0);
                 s = 0
-            case 16:
+                break
+            case "divide":
                 s0 /= s
                 calculation_tab.innerHTML = "/"
+                console.log(s0);
                 s = 0
-            case 13:
+                break
+            case "equal":
                 calculation_tab.innerHTML = "" + s0 + ""
-            case 14:
+                console.log(s0);
+                s0=0
+                break
+            case "clear":
                 s0 = 0
                 calculation_tab.innerHTML = ""
                 s = 0
+                break
         }
     }
 }
