@@ -39,56 +39,56 @@ function Calcul(type, n) {
             case "plus":
                 actions ++
                 n0 = n
-                calculation_tab.innerHTML = "+"
+                Inner("+")
                 break
             case "minus":
                 actions ++
                 n0 = n
-                calculation_tab.innerHTML = "-"
+                Inner("-")
                 break
             case "multiply":
                 actions ++
                 n0 = n
-                calculation_tab.innerHTML = "*"
+                Inner("*")
                 break
             case "divide":
                 actions ++
                 n0 = n
-                calculation_tab.innerHTML = "/"
+                Inner("/")
                 break
             case "equal":
                 switch (n0) {
                     case "plus":
                         calc = old_number + new_number
-                        calculation_tab.innerHTML = "" + calc + ""
+                        Inner(calc)
                         break
                     case "minus":
                         calc = old_number - new_number
-                        calculation_tab.innerHTML = "" + calc + ""
+                        Inner(calc)
                         break
                     case "multiply":
                         if(actions > 0){
-                            calculation_tab.innerHTML = "" + old_number + ""
+                            calc = old_number
+                            Inner(calc)
                         }
                         else{
                             calc = (old_number * new_number)
-                            calculation_tab.innerHTML = "" + calc + ""
+                            Inner(calc)
                         }
                         break
                     case "divide":
                         if(actions > 0){
-                            calculation_tab.innerHTML = "" + old_number + ""
+                            calc = old_number
+                            Inner(calc)
                         }
                         else{
                             calc = (old_number / new_number)
-                            calculation_tab.innerHTML = "" + calc + ""
+                            Inner(calc)
                         }
                         break
                     case "clear":
                         calc = new_number
-                        calculation_tab.innerHTML = "" + new_number + ""
-                    default:
-                        new_number
+                        Inner(new_number)
                 }
                 new_number = calc
                 actions = 0
@@ -96,11 +96,21 @@ function Calcul(type, n) {
             case "clear":
                 actions = 0
                 n0 = n
-                calculation_tab.innerHTML = "clear"
+                Inner("clear")
                 actions = 0
                 break
             default:
                 break
         }
     }
+}
+function Inner(sign){
+    calculation_tab.style.color = "#ffffff00"
+    calculation_tab.style.fontSize = "40px"
+    calculation_tab.innerHTML = ""+sign+""
+    setInterval(Inner_2(), 500)
+}
+function Inner_2(){
+    calculation_tab.style.color = "rgb(222, 255, 254)"
+    calculation_tab.style.fontSize = "26px"
 }
