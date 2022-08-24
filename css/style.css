@@ -42,10 +42,16 @@ body{
     background: hsl(247, 100%, 56%);
     width: 50px;
     height: 50px;
+    transition: 500ms;
 }
 .number:hover,
 .number:checked{
     background: hsl(258, 100%, 56%);
     width: 50px;
     height: 50px;
+}
+.empty,
+.empty:hover{
+    background: none;
+    border: none;
 }
