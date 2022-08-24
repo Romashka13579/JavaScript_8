@@ -6,6 +6,7 @@ var dot_1 = 0
 var old_number = new Number()
 var new_number = new Number()
 var calculation_tab = document.getElementById("calculation-tab")
+var calculation_tab_top = document.getElementById("calculation-tab-top")
 function Calcul(type, n) {
     if (type == 0) {
         if(dot == 1){
@@ -29,9 +30,10 @@ function Calcul(type, n) {
             calculation_tab.innerHTML = "" + new_number + ""
         }
     }
-    if (type == 2) {
+    else if (type == 2) {
         dot = 0
         dot_1 = 0
+        calculation_tab_top.innerHTML += ""+new_number+""
         if(actions > 0){
             switch (n0) {
                 case "plus":
@@ -61,27 +63,33 @@ function Calcul(type, n) {
                 actions ++
                 n0 = n
                 Inner("+")
+                calculation_tab_top.innerHTML += "+"
                 break
             case "minus":
                 actions ++
                 n0 = n
                 Inner("-")
+                calculation_tab_top.innerHTML += "-"
                 break
             case "multiply":
                 actions ++
                 n0 = n
                 Inner("*")
+                calculation_tab_top.innerHTML += "*"
                 break
             case "divide":
                 actions ++
                 n0 = n
                 Inner("/")
+                calculation_tab_top.innerHTML += "/"
                 break
             case "equal":
+                calculation_tab_top.innerHTML += "="
                 switch (n0) {
                     case "plus":
                         calc = old_number + new_number
                         Inner(calc)
+                        calculation_tab_top.innerHTML += "calc"
                         break
                     case "minus":
                         calc = old_number - new_number

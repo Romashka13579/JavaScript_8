@@ -15,10 +15,15 @@ body{
     height: auto;
     padding: 20px;
     display: grid;
-    grid-template-rows: 2fr 8fr;
+    grid-template-rows: 3fr 8fr;
     gap: 20px;
     background: #2776ff;
 }
+.tabs{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+#calculation-tab-top,
 #calculation-tab{
     opacity: 1;
     background: hsl(247, 100%, 56%);
@@ -32,6 +37,11 @@ body{
     align-items: center;
     transition: 500ms;
 }
+#calculation-tab-top{
+    border-bottom: none;
+    font-size: 18px;
+}
+#calculation-tab{border-top: none;}
 .calculation-numbers{
     display: grid;
     grid-template-rows: repeat(4, 1fr);
