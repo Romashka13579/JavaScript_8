@@ -12,7 +12,22 @@ function Calcul(type, n) {
     }
     if (type == 2) {
         if(actions > 0){
-            old_number += new_number
+            switch (n0) {
+                case "plus":
+                    old_number += new_number
+                    break
+                case "minus":
+                    old_number -= new_number
+                    break
+                case "multiply":
+                    old_number *= new_number
+                    break
+                case "divide":
+                    old_number = old_number / new_number
+                    break
+                case "clear":
+                    old_number = 0
+            }
             new_number = 0
             console.log(old_number);
         }
@@ -52,12 +67,22 @@ function Calcul(type, n) {
                         calculation_tab.innerHTML = "" + calc + ""
                         break
                     case "multiply":
-                        calc = (old_number * new_number)
-                        calculation_tab.innerHTML = "" + calc + ""
+                        if(actions > 0){
+                            calculation_tab.innerHTML = "" + old_number + ""
+                        }
+                        else{
+                            calc = (old_number * new_number)
+                            calculation_tab.innerHTML = "" + calc + ""
+                        }
                         break
                     case "divide":
-                        calc = (old_number / new_number)
-                        calculation_tab.innerHTML = "" + calc + ""
+                        if(actions > 0){
+                            calculation_tab.innerHTML = "" + old_number + ""
+                        }
+                        else{
+                            calc = (old_number / new_number)
+                            calculation_tab.innerHTML = "" + calc + ""
+                        }
                         break
                     case "clear":
                         calc = new_number
