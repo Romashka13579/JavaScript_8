@@ -1,16 +1,37 @@
 var n0
 var calc
 var actions = 0
+var dot = 0
+var dot_1 = 0
 var old_number = new Number()
 var new_number = new Number()
 var calculation_tab = document.getElementById("calculation-tab")
 function Calcul(type, n) {
-    if (type == 1) {
-        new_number *= 10
-        new_number += n
-        calculation_tab.innerHTML = "" + new_number + ""
+    if (type == 0) {
+        if(dot == 1){
+            dot = 1
+            calculation_tab.innerHTML = "" + new_number + ""
+        }
+        else{
+            dot = 1
+            Math.round(new_number)
+            calculation_tab.innerHTML = "" + new_number + ""
+        }
+    }
+    else if (type == 1) {
+        if(dot == 1){
+            dot_1++
+            new_number += n / Math.round(Math.pow(10, dot_1))
+            calculation_tab.innerHTML = "" + new_number + ""
+        }
+        else{
+            new_number *= 10
+            new_number += n
+            calculation_tab.innerHTML = "" + new_number + ""
+        }
     }
     if (type == 2) {
+        dot = 0
         if(actions > 0){
             switch (n0) {
                 case "plus":
