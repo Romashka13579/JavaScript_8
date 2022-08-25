@@ -15,7 +15,7 @@ body{
     height: auto;
     padding: 20px;
     display: grid;
-    grid-template-rows: 3fr 8fr;
+    grid-template-rows: 97.5px 8fr;
     gap: 20px;
     background: #2776ff;
 }
@@ -42,7 +42,7 @@ body{
     font-size: 18px;
 }
 #calculation-tab{border-top: none;}
-.calculation-numbers{
+#calculation-numbers{
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(5, 1fr);
@@ -67,15 +67,14 @@ body{
     background: none;
     border: none;
 }
-.more{
+#more{
     background: url(../img/maximize-solid.svg);
     background-color: hsl(247, 100%, 56%);
     background-position: center;
     background-size: 50px 50px;
 }
-.more:focus,
-.more:hover{
-    background: url(../img/minimize-solid.svg);
+#more:focus,
+#more:hover{
     background-color: hsl(258, 100%, 56%);
     background-position: center;
     background-size: 50px 50px;
