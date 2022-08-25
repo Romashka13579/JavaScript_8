@@ -49,19 +49,37 @@ body{
     gap: 20px;
 }
 .number{
+    padding: none;
     background: hsl(247, 100%, 56%);
     width: 50px;
     height: 50px;
     transition: 500ms;
 }
 .number:hover,
-.number:checked{
+.number:focus{
     background: hsl(258, 100%, 56%);
     width: 50px;
     height: 50px;
 }
 .empty,
-.empty:hover{
+.empty:hover,
+.empty:focus{
     background: none;
     border: none;
+}
+.more{
+    background: url(../img/maximize-solid.svg);
+    background-color: hsl(247, 100%, 56%);
+    background-position: center;
+    background-size: 50px 50px;
+}
+.more:focus,
+.more:hover{
+    background: url(../img/minimize-solid.svg);
+    background-color: hsl(258, 100%, 56%);
+    background-position: center;
+    background-size: 50px 50px;
+}
+.display{
+    display: none;
 }
