@@ -143,20 +143,36 @@ function Calcul(type, n) {
     }
     else if (type == 3) {
         switch (n) {
+            case "sin":
+                new_number = Math.sin(new_number/180*Math.PI)
+                Inner(new_number)
+                break
+            case "cos":
+                new_number = Math.cos(new_number/180*Math.PI)
+                Inner(new_number)
+                break
+            case "tan":
+                new_number = Math.tan(new_number/180*Math.PI)
+                Inner(new_number)
+                break
+            case "ctg":
+                new_number = 1 / Math.tan(new_number/180*Math.PI)
+                Inner(new_number)
+                break
             case "asin":
-                new_number = Math.asin(new_number)
+                new_number = Math.asin(new_number) * 180/Math.PI
                 Inner(new_number)
                 break
             case "acos":
-                new_number = Math.acos(new_number)
+                new_number = Math.acos(new_number) * 180/Math.PI
                 Inner(new_number)
                 break
             case "atan":
-                new_number = Math.atan(new_number)
+                new_number = Math.atan(new_number) * 180/Math.PI
                 Inner(new_number)
                 break
             case "actg":
-                new_number = 1 / Math.atan(new_number)
+                new_number = 1 / Math.atan(new_number) * 180/Math.PI
                 Inner(new_number)
                 break
         }
