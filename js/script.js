@@ -2,6 +2,7 @@ var n0
 var calc
 var actions = 0
 var angle = 0
+var angle_1 = 0
 var dot = 0
 var equal = 0
 var dot_1 = 0
@@ -164,10 +165,18 @@ function Calcul(type, n) {
         if(angle == 0){
             switch (n) {
                 case "sin":
+                    if(new_number >=360){
+                        var new_number_ = Math.floor(new_number/360)
+                        new_number = new_number - (new_number_*360)
+                    }
                     new_number = Math.sin(new_number/180*Math.PI)
                     Inner(new_number)
                     break
                 case "cos":
+                    if(new_number >=360){
+                        var new_number_ = Math.floor(new_number/360)
+                        new_number = new_number - (new_number_*360)
+                    }
                     new_number = Math.cos(new_number/180*Math.PI)
                     Inner(new_number)
                     break
@@ -179,6 +188,15 @@ function Calcul(type, n) {
                     new_number = 1 / Math.tan(new_number/180*Math.PI)
                     Inner(new_number)
                     break
+            }
+            angle = 1
+            angle_1 = 0
+        }
+    }
+    else if (type == 31) {
+        dot_1 = -1
+        if(angle_1 == 0){
+            switch (n) {
                 case "asin":
                     new_number = Math.asin(new_number) * 180/Math.PI
                     Inner(new_number)
@@ -196,7 +214,8 @@ function Calcul(type, n) {
                     Inner(new_number)
                     break
             }
-            angle = 1
+            angle = 0
+            angle_1 = 1
         }
     }
     else if (type == 4) {
