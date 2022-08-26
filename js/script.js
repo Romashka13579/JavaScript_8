@@ -42,6 +42,10 @@ function Calcul(type, n) {
             calculation_tab.innerHTML = "" + new_number + ""
         }
     }
+    else if (type == 11) {
+        calculation_tab.innerHTML = ""
+        new_number = 0
+    }
     else if (type == 2) {
         if (equal == 1) {
             calculation_tab_top.innerHTML = ""
@@ -74,7 +78,6 @@ function Calcul(type, n) {
                     old_number = 0
             }
             new_number = 0
-            console.log(old_number);
         }
         else if (actions <= 0 && n != "equal") {
             old_number = new_number
@@ -241,10 +244,6 @@ function Calcul(type, n) {
             if (angle == 0) {
                 switch (n) {
                     case "sin":
-                        // if (new_number >= 360) {
-                        //     var new_number_ = Math.floor(new_number / 360)
-                        //     new_number = new_number - (new_number_ * 360)
-                        // }
                         new_number = Math.sin(new_number)
                         Inner(new_number)
                         break
